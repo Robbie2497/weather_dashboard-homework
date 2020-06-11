@@ -1,0 +1,20 @@
+/* classes */
+.header {
+    background-color: grey;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* ids */
+#searchButton {
+    background-color: rgb(0, 119, 255);
+    color: white;
+    height: 38px;
+    width: 35px;
+}
+
+#searchForm {
+    height: 35px;
+    width: 250px;
+}
