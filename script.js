@@ -19,7 +19,7 @@ $(document).ready(function() {
   function searchWeather(city) {
     $.ajax({
       type: "GET",
-      url: "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=c1399209493ea784bd9b7638881b3bbc&units=imperial",
+      url: "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=c1399209493ea784bd9b7638881b3bbc&units=imperial",
       dataType: "json",
       success: function(data) {
 
@@ -40,7 +40,7 @@ $(document).ready(function() {
         var humid = $("<p>").addClass("card-text").text("Humidity: " + data.main.humidity + "%");
         var temp = $("<p>").addClass("card-text").text("Temperature: " + data.main.temp + " °F");
         var cardBody = $("<div>").addClass("card-body");
-        var img = $("<img>").attr("src", "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
+        var img = $("<img>").attr("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
 
 
         title.append(img);
@@ -58,7 +58,7 @@ $(document).ready(function() {
   function getForecast(city) {
     $.ajax({
       type: "GET",
-      url: "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=c1399209493ea784bd9b7638881b3bbc&units=imperial",
+      url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=c1399209493ea784bd9b7638881b3bbc&units=imperial",
       dataType: "json",
       success: function(data) {
 
@@ -75,7 +75,7 @@ $(document).ready(function() {
 
             var title = $("<h5>").addClass("card-title").text(new Date(data.list[i].dt_txt).toLocaleDateString());
 
-            var img = $("<img>").attr("src", "http://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png");
+            var img = $("<img>").attr("src", "https://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png");
 
             var p1 = $("<p>").addClass("card-text").text("Temp: " + data.list[i].main.temp_max + " °F");
             var p2 = $("<p>").addClass("card-text").text("Humidity: " + data.list[i].main.humidity + "%");
@@ -92,7 +92,7 @@ $(document).ready(function() {
   function getUVIndex(lat, lon) {
     $.ajax({
       type: "GET",
-      url: "http://api.openweathermap.org/data/2.5/uvi?appid=c1399209493ea784bd9b7638881b3bbc&lat=" + lat + "&lon=" + lon,
+      url: "https://api.openweathermap.org/data/2.5/uvi?appid=c1399209493ea784bd9b7638881b3bbc&lat=" + lat + "&lon=" + lon,
       dataType: "json",
       success: function(data) {
         var uv = $("<p>").text("UV Index: ");
